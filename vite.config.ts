@@ -1,7 +1,5 @@
 import { defineConfig } from "vite";
 import path from "node:path";
-import minifyHTML from "rollup-plugin-minify-html-literals";
-import { rollupPluginHTML as html } from "@web/rollup-plugin-html";
 
 export default defineConfig({
   build: {
@@ -17,7 +15,6 @@ export default defineConfig({
           lit: "Lit",
         },
       },
-      plugins: [html()],
     },
   },
   resolve: {
