@@ -1,8 +1,9 @@
 import { defineConfig } from "vite";
 import path from "node:path";
 
+const isProduction = process.env.NODE_ENV === "production";
+
 export default defineConfig({
-  mode: "production",
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
@@ -16,6 +17,9 @@ export default defineConfig({
           lit: "Lit",
         },
       },
+      plugins: [
+        isProduction && (await import("@rollup/plugin-terser")).default(),
+      ],
     },
   },
   resolve: {
