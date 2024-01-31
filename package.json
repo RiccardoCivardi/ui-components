@@ -27,13 +27,11 @@
     "release-minor": "echo \"Increment version minor...\" && npm version minor && npm run push && npm run release",
     "release-major": "echo \"Increment version major...\" && npm version major && npm run push && npm run release"
   },
-  "dependencies": {
-    "lit": "^3.1.0"
-  },
   "devDependencies": {
     "@types/node": "^20.11.10",
     "autoprefixer": "^10.4.17",
     "del-cli": "^5.1.0",
+    "lit": "^3.1.1",
     "postcss": "^8.4.33",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",
