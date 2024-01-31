@@ -1,9 +1,10 @@
 {
   "name": "@bubibubi/ui-components",
   "private": false,
-  "version": "2.0.0",
+  "version": "0.1.4",
   "main": "dist/ui-components.umd.js",
   "module": "./dist/ui-components.js",
+  "types": "dist/ui-components.d.ts",
   "exports": {
     ".": {
       "import": "./dist/ui-components.js",
@@ -14,21 +15,17 @@
     "dist"
   ],
   "type": "module",
-  "include": [
-    "dist/**/*"
-  ],
-  "compilerOptions": {
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "dist",
-    "declarationMap": true
-  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "types": "npx -p typescript tsc dist/*.js --declaration --allowJs --emitDeclarationOnly --outDir dist",
-    "release": "npm version patch && npm publish",
-    "preview": "vite preview"
+    "delete-dist": "echo \"Delete all in dist...\" && del-cli -f ./dist/*",
+    "build": "echo \"Compiling TypeScript...\" && tsc && echo \"Building...\" && vite build",
+    "types": "echo \"Create .d.ts file in dist ...\" && npx -p typescript tsc dist/*.js --declaration --allowJs --emitDeclarationOnly --outDir dist",
+    "all": "npm run delete-dist && npm run build && npm run types && echo \"Done!!!\"",
+    "push": "echo \"Push commit...\" && git push",
+    "release": "echo \"Publish library...\" && npm publish && echo \"Done!!!\"",
+    "release-patch": "echo \"Increment version patch...\" && npm version patch && npm run push && npm run release",
+    "release-minor": "echo \"Increment version minor...\" && npm version minor && npm run push && npm run release",
+    "release-major": "echo \"Increment version major...\" && npm version major && npm run push && npm run release"
   },
   "dependencies": {
     "lit": "^3.1.0"
@@ -36,6 +33,7 @@
   "devDependencies": {
     "@types/node": "^20.11.10",
     "autoprefixer": "^10.4.17",
+    "del-cli": "^5.1.0",
     "postcss": "^8.4.33",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",
