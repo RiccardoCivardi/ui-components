@@ -1,7 +1,7 @@
 {
   "name": "@bubibubi/ui-components",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "dist/ui-components.umd.js",
   "module": "./dist/ui-components.js",
   "exports": {
@@ -14,9 +14,20 @@
     "dist"
   ],
   "type": "module",
+  "include": [
+    "dist/**/*"
+  ],
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "declarationMap": true
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "types": "npx -p typescript tsc dist/*.js --declaration --allowJs --emitDeclarationOnly --outDir dist",
+    "release": "npm version patch && npm publish",
     "preview": "vite preview"
   },
   "dependencies": {

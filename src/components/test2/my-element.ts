@@ -10,7 +10,7 @@ import { customElement, property } from "lit/decorators.js";
  * @csspart button - The button
  */
 @customElement("my-element")
-export class MyElement extends LitElement {
+export default class MyElement extends LitElement {
   /**
    * Copy for the read the docs hint.
    */
