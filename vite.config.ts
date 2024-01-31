@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import path from "node:path";
 
 export default defineConfig({
+  mode: "production",
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
