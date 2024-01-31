@@ -12,10 +12,15 @@
     }
   },
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
   "type": "module",
+  "publishConfig": {
+    "ignore": [
+      "package.json",
+      "node_modules"
+    ]
+  },
   "scripts": {
     "dev": "vite",
     "delete-dist": "echo \"Delete all in dist...\" && del-cli -f ./dist/*",
