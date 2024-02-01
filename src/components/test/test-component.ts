@@ -1,27 +1,43 @@
 import { html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { classMap } from "lit/directives/class-map.js";
 import TailwindElement from "@/shared/tailwind-element";
 
 import style from "./testComponent.scss?inline";
 
+/**
+ * An example element.
+ *
+ * @slot - This element has a slot
+ * @prop name : string - default "World"
+ * @prop btnColor : string (tailwind-class) - default bg-primary-400
+ * @css prop btnColor override button's background (use tailwing class)
+ */
+
 @customElement("test-component")
 export default class TestComponent extends TailwindElement(style) {
-  @property()
+  @property({ type: String })
   name?: string = "World";
+
+  @property({ type: String })
+  btnColor?: string = "bg-primary-800";
 
   static styles = [
     TailwindElement(style).styles,
     css`
-      nav {
+      .navigation {
         background-color: aliceblue;
         color: black;
       }
     `,
   ];
 
+  @property()
+  classes = { "bg-primary-400": true };
+
   render() {
     return html`
-      <p>
+      <p 
         Hello,
         <b>${this.name}</b>
         !
@@ -30,8 +46,9 @@ export default class TestComponent extends TailwindElement(style) {
         Hello world!
       </button>
       <nav>NAVIGAZIONE</nav>
-
-      <slot></slot>
+      <button class=${classMap(this.classes)}>Prova Bottone</button>
+      <button class=${this.btnColor}>Prova Bottone</button>
+      <slot ></slot>
     `;
   }
 }
