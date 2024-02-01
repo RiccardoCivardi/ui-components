@@ -27,11 +27,10 @@
     "release-minor": "echo \"Increment version minor...\" && npm version minor && npm run push && npm run release",
     "release-major": "echo \"Increment version major...\" && npm version major && npm run push && npm run release"
   },
-  "dependencies": {
+  "peerDependencies": {
     "lit": "^3.1.1"
   },
   "devDependencies": {
-    "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "^20.11.10",
     "autoprefixer": "^10.4.17",
     "del-cli": "^5.1.0",
@@ -41,6 +40,7 @@
     "sass": "^1.70.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
+    "uglify-js": "^3.17.4",
     "vite": "^5.0.8"
   }
 }

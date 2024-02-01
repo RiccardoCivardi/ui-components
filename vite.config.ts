@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import path from "node:path";
-import terser from "@rollup/plugin-terser";
 
 export default defineConfig({
   build: {
@@ -16,15 +15,6 @@ export default defineConfig({
           lit: "Lit",
         },
       },
-      plugins: [
-        terser({
-          ecma: 2020,
-
-          module: true,
-
-          compress: true,
-        }),
-      ],
     },
   },
   resolve: {
