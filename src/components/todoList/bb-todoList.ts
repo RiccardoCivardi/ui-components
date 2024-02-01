@@ -6,7 +6,7 @@ type ToDoItem = {
   completed: boolean;
 };
 
-@customElement("bb-todolist")
+@customElement("bb-to-do-list")
 export default class BbToDoList extends LitElement {
   static styles = css`
     .completed {
@@ -83,6 +83,6 @@ export default class BbToDoList extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "bb-todolist": BbToDoList;
+    "bb-to-do-list": BbToDoList;
   }
 }
