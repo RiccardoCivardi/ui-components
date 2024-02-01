@@ -7,7 +7,7 @@ type ToDoItem = {
 };
 
 @customElement("bb-todo-list")
-export class ToDoList extends LitElement {
+export class BbToDoList extends LitElement {
   static styles = css`
     .completed {
       text-decoration-line: line-through;
@@ -83,6 +83,6 @@ export class ToDoList extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "bb-todo-list": ToDoList;
+    "bb-todo-list": BbToDoList;
   }
 }
