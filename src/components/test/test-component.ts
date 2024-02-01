@@ -33,9 +33,9 @@ export default class TestComponent extends TailwindElement(style) {
   ];
 
   @property()
-  classes = { "bg-primary-400": true };
+  _classes = { "bg-primary-400": true };
 
-  render() {
+  protected render() {
     return html`
       <p 
         Hello,
@@ -45,8 +45,8 @@ export default class TestComponent extends TailwindElement(style) {
       <button class="rounded-full  bg-blue-200 p-2 text-2xl text-yellow-200">
         Hello world!
       </button>
-      <nav>NAVIGAZIONE</nav>
-      <button class=${classMap(this.classes)}>Prova Bottone</button>
+      <nav class="navigation">NAVIGAZIONE</nav>
+      <button class=${classMap(this._classes)}>Prova Bottone</button>
       <button class=${this.btnColor}>Prova Bottone</button>
       <slot ></slot>
     `;
