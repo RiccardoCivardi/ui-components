@@ -7,7 +7,7 @@ type ToDoItem = {
 };
 
 @customElement("bb-todolist")
-export class BbToDoList extends LitElement {
+export default class BbToDoList extends LitElement {
   static styles = css`
     .completed {
       text-decoration-line: line-through;
