@@ -9,8 +9,8 @@ import style from "./testComponent.scss?inline";
  * An example element.
  *
  * @slot - This element has a slot
- * @prop name : string - default "World"
- * @prop btnColor : string (tailwind-class) - default bg-primary-400
+ * @property {string} name  default "World"
+ * @property {string} btnColor : string (tailwind-class) - default bg-primary-400
  * @css prop btnColor override button's background (use tailwing class)
  */
 
