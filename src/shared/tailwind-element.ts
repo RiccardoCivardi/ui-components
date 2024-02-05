@@ -1,17 +1,20 @@
 import { LitElement, unsafeCSS, css, CSSResultGroup } from "lit";
+import { customElement, property } from "lit/decorators.js";
 
 import tailwindStyle from "./tailwindGlobal.css?inline";
 
-const TailwindElement = (componentStyle?: string) =>
-  class extends LitElement {
-    static styles = [
-      css`
-        ${unsafeCSS(tailwindStyle)}
-      `,
-      css`
-        ${unsafeCSS(componentStyle) || ""}
-      `,
-    ] as CSSResultGroup;
-  };
+@customElement("super-tailwind-element")
+export default class SuperTailwindElement extends LitElement {
+  @property({ attribute: false, type: Object })
+  componentExternalStyle?: Record<string, string>;
 
-export default TailwindElement;
+  static styles = css`
+    ${unsafeCSS(tailwindStyle)}
+  ` as CSSResultGroup;
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "super-tailwind-element": SuperTailwindElement;
+  }
+}

@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+
+@layer components {
+  .mio-componente {
+    @apply bg-success-400;
+    &__inner {
+      @apply text-orange-600;
+    }
+  }
+}

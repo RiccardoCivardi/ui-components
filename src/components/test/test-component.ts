@@ -1,9 +1,11 @@
-import { html, css } from "lit";
+import { html, css, CSSResultGroup, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
-import TailwindElement from "@/shared/tailwind-element";
 
-import style from "./testComponent.scss?inline";
+import SuperTailwindElement from "@/shared/tailwind-element";
+
+import styleScss from "./testComponent.scss?inline";
+import styleCss from "./testComponent.css?inline";
 
 /**
  * An example element.
@@ -15,29 +17,32 @@ import style from "./testComponent.scss?inline";
  */
 
 @customElement("test-component")
-export default class TestComponent extends TailwindElement(style) {
+export default class TestComponent extends SuperTailwindElement {
   @property({ type: String })
   name?: string = "World";
 
-  @property({ type: String })
-  btnColor?: string = "bg-primary-800";
+  @property({ type: Boolean })
+  isTextWhite: boolean = false;
 
   static styles = [
-    TailwindElement(style).styles,
+    SuperTailwindElement.styles,
+    css`
+      ${unsafeCSS(styleScss) || ""}
+    `,
+    css`
+      ${unsafeCSS(styleCss) || ""}
+    `,
     css`
       .navigation {
         background-color: aliceblue;
         color: black;
       }
     `,
-  ];
+  ] as CSSResultGroup;
 
-  @property()
-  _classes = { "bg-primary-400": true };
-
-  protected render() {
+  render() {
     return html`
-      <p 
+      <p>
         Hello,
         <b>${this.name}</b>
         !
@@ -46,9 +51,18 @@ export default class TestComponent extends TailwindElement(style) {
         Hello world!
       </button>
       <nav class="navigation">NAVIGAZIONE</nav>
-      <button class=${classMap(this._classes)}>Prova Bottone</button>
-      <button class=${this.btnColor}>Prova Bottone</button>
-      <slot ></slot>
+      <button
+        class=${classMap({
+          "bg-success-400": true,
+          "text-white": this.isTextWhite,
+        })}
+      >
+        Prova Bottone
+      </button>
+      <button class="mio-componente">
+        <span class="mio-componente__inner">Prova Bottone 2</span>
+      </button>
+      <slot></slot>
     `;
   }
 }

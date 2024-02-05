@@ -4,7 +4,6 @@
   "version": "0.1.21",
   "main": "dist/ui-components.umd.js",
   "module": "./dist/ui-components.js",
-  "types": "dist/ui-components.d.ts",
   "exports": {
     ".": {
       "import": "./dist/ui-components.js",
@@ -19,7 +18,8 @@
     "dev": "vite",
     "delete-dist": "echo \"Delete all in dist...\" && del-cli -f ./dist/*",
     "build": "echo \"Compiling TypeScript...\" && tsc && echo \"Building...\" && vite build",
-    "types": "echo \"Create .d.ts file in dist ...\" && npx -p typescript tsc dist/*.js --declaration --allowJs --emitDeclarationOnly --outDir dist",
+    "types1": "echo \"Create .d.ts file in dist ...\" && npx -p typescript tsc dist/*.js --declaration --allowJs --emitDeclarationOnly --outDir dist",
+    "types": "echo \"Creation .d.ts files in types ...\" && find src/components -type f -name '*.ts' | xargs -I {} tsc {} --declaration --allowJs --emitDeclarationOnly --outDir types",
     "all": "npm run delete-dist && npm run build && npm run types && echo \"Done!!!\"",
     "push": "echo \"Push commit...\" && git push",
     "release": "echo \"Publish library...\" && npm publish && echo \"Done!!!\"",
@@ -37,10 +37,12 @@
     "postcss": "^8.4.33",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",
+    "rollup-plugin-minify-html-literals": "^1.2.6",
     "sass": "^1.70.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
     "uglify-js": "^3.17.4",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.7.2"
   }
 }
