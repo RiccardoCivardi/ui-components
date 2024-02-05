@@ -12,14 +12,37 @@
       type="module"
       src="/src/components/todoList/bb-todoList.ts"
     ></script>
+    <script
+      type="module"
+      src="/src/components/bbMyPanel/bb-my-panel.ts"
+    ></script>
+
+    <style>
+      bb-my-panel {
+        --bb-my-panel-primary-bg: lightgreen;
+        --bb-my-panel-primary-color: #222;
+      }
+    </style>
   </head>
   <body>
-    <my-element>
+    <!-- <my-element>
       <h1>Vite + Lit</h1>
-    </my-element>
-    <test-component name="Riccardo">
+    </my-element>  -->
+    <test-component name="Riccardo" isTextWhite>
       <div>FUNZIONERÀ???</div>
     </test-component>
-    <bb-to-do-list btnColor="bg-green-200"></bb-to-do-list>
+    <!-- <bb-to-do-list btnColor="bg-green-200"></bb-to-do-list> -->
+    <bb-my-panel title="MY PROFILE" icon="👾">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et ratione
+      necessitatibus obcaecati velit molestiae facilis fuga veniam tempora?
+      Reprehenderit, vel.
+    </bb-my-panel>
+
+    <script>
+      const el = document.querySelector("bb-my-panel");
+      el.addEventListener("icon-click", () => {
+        console.log("do something");
+      });
+    </script>
   </body>
 </html>
