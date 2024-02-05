@@ -26,7 +26,7 @@
     "release-minor": "echo \"Increment version minor...\" && npm version minor && npm run push && npm run release",
     "release-major": "echo \"Increment version major...\" && npm version major && npm run push && npm run release"
   },
-  "peerDependencies": {
+  "Dependencies": {
     "lit": "^3.1.1"
   },
   "devDependencies": {
