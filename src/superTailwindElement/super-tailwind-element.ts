@@ -5,9 +5,6 @@ import tailwindStyle from "./tailwindGlobal.css?inline";
 
 @customElement("super-tailwind-element")
 export default class SuperTailwindElement extends LitElement {
-  @property({ attribute: false, type: Object })
-  componentExternalStyle?: Record<string, string>;
-
   static styles = css`
     ${unsafeCSS(tailwindStyle)}
   ` as CSSResultGroup;

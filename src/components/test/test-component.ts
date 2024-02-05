@@ -2,7 +2,7 @@ import { html, css, CSSResultGroup, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 
-import SuperTailwindElement from "@/shared/tailwind-element";
+import SuperTailwindElement from "@/superTailwindElement/super-tailwind-element";
 
 import styleScss from "./testComponent.scss?inline";
 import styleCss from "./testComponent.css?inline";
