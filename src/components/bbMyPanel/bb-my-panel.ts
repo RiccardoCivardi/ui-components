@@ -3,6 +3,14 @@ import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { when } from "lit/directives/when.js";
 
+/**
+ * @property {string} title - default "WIDGET"
+ * @property {boolean} opened - default false
+ * @property {string} icon - default ""
+ * @css --bb-my-panel-primary-bg, #000
+ * @css --bb-my-panel-primary-color, white
+ * @slot - This element has an unnamed slot who rappresent the body
+ */
 @customElement("bb-my-panel")
 export default class BbMyPanel extends LitElement {
   static styles = css`

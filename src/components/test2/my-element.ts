@@ -4,10 +4,8 @@ import { customElement, property } from "lit/decorators.js";
 // import viteLogo from "/vite.svg";
 
 /**
- * An example element.
- *
- * @slot - This element has a slot
- * @csspart button - The button
+ * @property {string} docsHint - default "Click on the Vite and Lit logos to learn more"
+ * @property {number} count - default 0
  */
 @customElement("my-element")
 export default class MyElement extends LitElement {

@@ -8,14 +8,10 @@ import styleScss from "./testComponent.scss?inline";
 import styleCss from "./testComponent.css?inline";
 
 /**
- * An example element.
- *
- * @slot - This element has a slot
- * @property {string} name  default "World"
- * @property {string} btnColor : string (tailwind-class) - default bg-primary-400
- * @css prop btnColor override button's background (use tailwing class)
+ * @property {string} name - default "World"
+ * @property {boolean} isTextWhite - default false
+ * @slot - This element has an unnamed slot
  */
-
 @customElement("test-component")
 export default class TestComponent extends SuperTailwindElement {
   @property({ type: String })

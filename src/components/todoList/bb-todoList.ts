@@ -6,6 +6,9 @@ type ToDoItem = {
   completed: boolean;
 };
 
+/**
+ * @property {boolean} hideCompleted - default false
+ */
 @customElement("bb-to-do-list")
 export default class BbToDoList extends LitElement {
   static styles = css`
