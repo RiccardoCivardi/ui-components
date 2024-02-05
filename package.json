@@ -4,6 +4,7 @@
   "version": "0.1.29",
   "main": "dist/ui-components.umd.js",
   "module": "./dist/ui-components.js",
+  "types": "dist/ui-components.d.ts",
   "exports": {
     ".": {
       "import": "./dist/ui-components.js",
