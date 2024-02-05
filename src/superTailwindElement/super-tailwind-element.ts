@@ -1,5 +1,5 @@
 import { LitElement, unsafeCSS, css, CSSResultGroup } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement } from "lit/decorators.js";
 
 import tailwindStyle from "./tailwindGlobal.css?inline";
 
