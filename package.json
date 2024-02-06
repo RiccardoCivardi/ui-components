@@ -8,7 +8,7 @@
   "version": "0.1.33",
   "main": "./dist/ui-components.umd.cjs",
   "module": "./dist/ui-components.js",
-  "types": "./dist/ui-components.d.ts",
+  "types": "dist/ui-components.d.ts",
   "exports": {
     ".": {
       "import": "./dist/ui-components.js",

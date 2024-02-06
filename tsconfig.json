@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
+    "target": "ES2022",
     "experimentalDecorators": true,
-    "useDefineForClassFields": false,
+    "useDefineForClassFields": true,
     "module": "ES2015",
-    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "declaration": true,
     "declarationMap": true,
