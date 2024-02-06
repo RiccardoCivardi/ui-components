@@ -15,13 +15,5 @@ export default defineConfig({
       name: "UiComponents",
       fileName: "ui-components",
     },
-    rollupOptions: {
-      external: ["lit"],
-      output: {
-        globals: {
-          lit: "Lit",
-        },
-      },
-    },
   },
 });

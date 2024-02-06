@@ -8,7 +8,6 @@
     "skipLibCheck": true,
     "declaration": true,
     "declarationMap": true,
-
     "moduleResolution": "Node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
