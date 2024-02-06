@@ -3,6 +3,7 @@ import path from "node:path";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
+  mode: "production",
   plugins: [dts({ rollupTypes: true })],
   resolve: {
     alias: {
