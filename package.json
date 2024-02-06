@@ -1,20 +1,20 @@
 {
   "name": "@bubibubi/ui-components",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "private": false,
   "version": "0.1.31",
-  "main": "dist/ui-components.umd.js",
+  "main": "./dist/ui-components.umd.cjs",
   "module": "./dist/ui-components.js",
-  "types": "dist/ui-components.d.ts",
+  "types": "./dist/ui-components.d.ts",
   "exports": {
     ".": {
       "import": "./dist/ui-components.js",
       "require": "./dist/ui-components.umd.cjs"
     }
   },
-  "files": [
-    "dist"
-  ],
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "delete-dist": "echo \"Delete all in dist...\" && del-cli -f ./dist/*",
