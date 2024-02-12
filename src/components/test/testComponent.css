@@ -5,7 +5,7 @@
   .mio-componente {
     @apply bg-success-400;
     &__inner {
-      @apply text-orange-600;
+      @apply text-danger-500;
     }
   }
 }
