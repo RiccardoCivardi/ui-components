@@ -43,7 +43,7 @@ export default class TestComponent extends SuperTailwindElement {
         <b>${this.name}</b>
         !
       </p>
-      <button class="rounded-full  bg-blue-200 p-2 text-2xl text-yellow-200">
+      <button class="rounded-full bg-primary-600 p-2 text-2xl text-success-400">
         Hello world!
       </button>
       <nav class="navigation">NAVIGAZIONE</nav>

@@ -10,6 +10,7 @@ import { when } from "lit/directives/when.js";
  * @css --bb-my-panel-primary-bg, #000
  * @css --bb-my-panel-primary-color, white
  * @slot - This element has an unnamed slot who rappresent the body
+ * @emits "icon-click" when click on icon
  */
 @customElement("bb-my-panel")
 export default class BbMyPanel extends LitElement {
