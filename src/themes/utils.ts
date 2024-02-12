@@ -1,5 +1,4 @@
-import { themes } from "./index";
-import type { IMappedTheme, ITheme } from "./types/themesTypes";
+import type { IMappedTheme, ITheme, IThemes } from "./types/themesTypes";
 
 export const mapTheme = (variables: ITheme): IMappedTheme => {
   return {
@@ -47,6 +46,12 @@ export const mapTheme = (variables: ITheme): IMappedTheme => {
     "--color-fill": variables.fill.DEFAULT || "",
     "--font-family-main": variables.fontFamily.main || "",
   };
+};
+
+import designSystem from "./themeDesygn/designSystem";
+
+const themes: IThemes = {
+  designSystem,
 };
 
 export const applyThemeIntoRoot = (theme: string): void => {
