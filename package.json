@@ -15,6 +15,7 @@
       "require": "./dist/ui-components.umd.cjs"
     }
   },
+  "sideEffects": false,
   "scripts": {
     "dev": "vite",
     "delete-dist": "echo \"Delete all in dist...\" && del-cli -f ./dist/*",
